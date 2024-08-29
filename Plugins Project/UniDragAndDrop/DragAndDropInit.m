@@ -15,3 +15,4 @@ void Initialize(cs_callback callback)
     
     dragView.callback = callback;
 }
+

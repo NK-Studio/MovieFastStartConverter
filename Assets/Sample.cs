@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Shibuya24.Utility;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Sample : MonoBehaviour
@@ -10,7 +13,18 @@ public class Sample : MonoBehaviour
 
     void Start()
     {
-        UniDragAndDrop.onDragAndDropFilePath = x => _text.text = x;
+        UniDragAndDrop.OnDragAndDropFilesPath += OnDragAndDropFilePath;
         UniDragAndDrop.Initialize();
+    }
+
+    private void OnDragAndDropFilePath(string[] obj)
+    {
+        StringBuilder sb = new StringBuilder();
+        
+        foreach (var s in obj)
+        {
+            sb.AppendLine(s);
+        }
+        _text.text = sb.ToString();
     }
 }

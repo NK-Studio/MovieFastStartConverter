@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 #if UNITY_STANDALONE_OSX
 using AOT;
+using Newtonsoft.Json;
 #endif
 
 namespace Shibuya24.Utility
@@ -11,7 +12,7 @@ namespace Shibuya24.Utility
         /// <summary>
         /// Callback to return the local path of a drag-and-drop file
         /// </summary>
-        public static Action<string> onDragAndDropFilePath;
+        public static Action<string[]> OnDragAndDropFilesPath;
 
         /// <summary>
         /// Initialization functions that must be called
@@ -33,7 +34,8 @@ namespace Shibuya24.Utility
         [MonoPInvokeCallback(typeof(callback_delegate))]
         private static void cs_callback(string val)
         {
-            onDragAndDropFilePath?.Invoke(val);
+            var links = JsonConvert.DeserializeObject<string[]>(val);
+            OnDragAndDropFilesPath?.Invoke(links);
         }
 #endif
     }
