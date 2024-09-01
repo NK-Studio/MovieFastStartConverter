@@ -1,0 +1,106 @@
+.emptyGroup {
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.selectFileLabel {
+    -unity-text-align: middle-center;
+    font-size: 20px;
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    color: rgb(31, 187, 255);
+    -unity-font-style: bold;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.selectFileLabel:hover {
+    cursor: url("project://database/Assets/FastStart-Resouces/Textures/pointinghand.png");
+    color: rgb(0, 152, 219);
+}
+
+.selectFileLabel:active {
+    color: rgb(17, 126, 174);
+}
+
+.button {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    background-color: rgb(0, 178, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    font-size: 27px;
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    -unity-font-style: bold;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.button:hover {
+    cursor: url("project://database/Assets/FastStart-Resouces/Textures/pointinghand.png");
+    background-color: rgb(0, 145, 207);
+}
+
+.ListView {
+}
+
+.ListView .unity-list-view__empty-label {
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    -unity-text-align: middle-center;
+    font-size: 80px;
+    color: rgb(102, 102, 102);
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.ListView .unity-list-view__item:hover {
+    background-color: rgb(60, 100, 136);
+}
+
+.ListView .unity-list-view__item {
+}
+
+.ListView .unity-collection-view__item--selected {
+    background-color: rgb(60, 100, 136);
+    -unity-font-style: bold;
+}
+
+.ListView #unity-low-button {
+    display: none;
+}
+
+.ListView #unity-high-button {
+    display: none;
+}
+
+.ListView #unity-slider {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    min-width: 24px;
+    width: 24px;
+}
+
+.ListView #unity-tracker {
+    background-color: rgba(0, 0, 0, 0.24);
+    border-width: 0;
+}
+
+.ListView #unity-dragger {
+    background-color: rgb(2, 178, 255);
+    width: 100%;
+    left: 0;
+    border-width: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}

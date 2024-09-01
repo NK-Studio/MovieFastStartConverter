@@ -13,9 +13,13 @@ public class UIController : MonoBehaviour
     private Button _convertButton;
     private Button _clearButton;
     private ListView _listView;
+    
+    private AudioSource _audioSource;
 
     private void Start()
     {
+        _audioSource = FindAnyObjectByType<AudioSource>();
+        
         UDragAndDrop.OnDragAndDropFilesPath += OnDragAndDropFilePath;
         UDragAndDrop.Initialize();
 
@@ -103,6 +107,7 @@ public class UIController : MonoBehaviour
         _convertButton.SetEnabled(true);
         _files.Clear();
         NativeDialog.ShowDialogBox("Fast Start Converter", "적용 완료", "확인");
+        _audioSource.Play();
     }
 
     private static bool IsVideoFastStartEnabled(string fullFilePath)
