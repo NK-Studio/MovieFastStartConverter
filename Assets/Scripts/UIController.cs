@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using SFB;
 using NKStudio;
 using UnityEngine;
@@ -21,8 +22,8 @@ public class UIController : MonoBehaviour
     {
         _audioSource = FindAnyObjectByType<AudioSource>();
         
-        UDragAndDrop.OnDragAndDropFilesPath += OnDragAndDropFilePath;
         UDragAndDrop.Initialize();
+        UDragAndDrop.OnDragAndDropFilesPath += OnDragAndDropFilePath;
 
         InitUI();
     }
@@ -55,7 +56,7 @@ public class UIController : MonoBehaviour
                 selectButton.clicked += () =>
                 {
                     var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", "mp4", true);
-                    OnDragAndDropFilePath(paths);
+                    OnDragAndDropFilePath(paths.ToList());
                 };
 
                 return emptyGroup;
@@ -66,7 +67,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    private void OnDragAndDropFilePath(string[] obj)
+    private void OnDragAndDropFilePath(List<string> obj)
     {
         _files.Clear();
 

@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -15,22 +14,74 @@ namespace NKStudio
 {
     public static class UDragAndDrop
     {
-        /// <summary>
-        /// Callback to return the local path of a drag-and-drop file
-        /// </summary>
-        public static Action<string[]> OnDragAndDropFilesPath;
+        private static class Imports
+        {
+            [DllImport("FileDragBridge.dll")]
+            public static extern void AddHook(DragEndCallback callback);
 
+            [DllImport("FileDragBridge.dll")]
+            public static extern void RemoveHook();
+        }
+
+        private delegate void DragEndCallback(int length, IntPtr arrayPointer);
+
+        [AOT.MonoPInvokeCallback(typeof(DragEndCallback))]
+        private static void onBegin(int length, IntPtr arrayPointer)
+        {
+            var paths = new List<string>(length);
+
+            var arrayResult = new IntPtr[length];
+            Marshal.Copy(arrayPointer, arrayResult, 0, length);
+
+            for (int i = 0; i < length; i++)
+            {
+                string res = Marshal.PtrToStringUni(arrayResult[i]);
+                paths.Add(res);
+            }
+
+            OnDragAndDropFilesPath?.Invoke(paths);
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void OnDomainReload()
+        {
+            OnDragAndDropFilesPath = null;
+        }
+        
         /// <summary>
         /// Initialization functions that must be called
         /// </summary>
         public static void Initialize()
         {
-#if UNITY_STANDALONE_OSX
+#if UNITY_STANDALONE_WIN
+#if !UNITY_EDITOR
+            Imports.AddHook(onBegin);
+#else
+            Debug.LogWarning("Editor에서는 동작하지 않습니다.");            
+#endif
+#elif UNITY_STANDALONE_OSX
             Initialize(cs_callback);
 #endif
         }
-
-        delegate void callback_delegate(string val);
+        
+        /// <summary>
+        /// Unsubscribe to disable drag feature.
+        /// </summary>
+        public static void Release()
+        {
+#if !UNITY_EDITOR_WIN && UNITY_STANDALONE_WIN
+			Imports.RemoveHook();
+#elif UNITY_EDITOR_WIN
+            Debug.Log("FileBridge doesn't work on Editor Platform");
+#endif
+        }
+        
+        /// <summary>
+        /// Callback to return the local path of a drag-and-drop file
+        /// </summary>
+        public static Action<List<string>> OnDragAndDropFilesPath;
+        
+       private delegate void callback_delegate(string val);
 
 #if UNITY_STANDALONE_OSX
         [DllImport("UniDragAndDrop")]
@@ -40,7 +91,7 @@ namespace NKStudio
         [MonoPInvokeCallback(typeof(callback_delegate))]
         private static void cs_callback(string val)
         {
-            var links = JsonConvert.DeserializeObject<string[]>(val);
+            var links = JsonConvert.DeserializeObject<List<string>>(val);
             OnDragAndDropFilesPath?.Invoke(links);
         }
 #endif
@@ -83,55 +134,6 @@ namespace NKStudio
             });
             
             return false;
-        }
-        
-        private static string RunCmd(string args)
-
-        {
-            Process pro = new Process();
-
- 
-
-            pro.StartInfo.FileName = "ffmpeg.exe"; // 환경 변수 사용시 ffmpeg.exe로 호출 가능
-
- 
-
-            pro.StartInfo.CreateNoWindow = true;  // cmd창을 띄우지 안도록 하기
-
-            pro.StartInfo.UseShellExecute = false;
-
-            //process.RedirectStandardOutput = true;  // cmd창에서 데이터를 가져오기
-
-            pro.StartInfo.RedirectStandardInput = true;  // cmd창으로 데이터 보내기
-
-            pro.StartInfo.RedirectStandardError = true;  // cmd창에서 오류 내용 가져오기
-
-            pro.EnableRaisingEvents = true;
-
- 
-
-            pro.StartInfo.Arguments = args;
-
-            pro.StartInfo.StandardErrorEncoding = Encoding.UTF8;
-            
-            pro.Start();
-            
-            pro.StandardInput.Close();
-
- 
-
-            string result = pro.StandardError.ReadToEnd().ToLower();
-
- 
-
-            pro.WaitForExit();
-
-            pro.StandardError.Close();
-
- 
-
-            return result;
-
         }
     }
 }
