@@ -2,33 +2,47 @@
 #include <iostream>
 #include <shellapi.h>
 
+enum UnityMode
+{
+    Editor,
+    Runtime
+};
+
 HWND unityHandle = nullptr;
 HHOOK hook;
 WCHAR** result;
 
 using Callback = void(__stdcall*)(int length, WCHAR** pathURLs);
 Callback UnityCallback;
+UnityMode WorkMode = Runtime;
 
-#define UNITY_WINDOW_CLASS_NAME L"UnityContainerWndClass"
 #define MAX_CLASS_NAME_LENGTH 256
-#define MAX_PATH_LENGTH 1024
+
+BOOL IsUnityWindowClass(const WCHAR* className)
+{
+    if (WorkMode == Runtime)
+        return wcscmp(className, L"UnityWndClass") == 0;
+
+    return wcscmp(className, L"UnityContainerWndClass") == 0;
+}
 
 BOOL CALLBACK FindUnityHWND(const HWND hwnd, LPARAM lParam)
 {
-    // skip invisible window
-    if (!IsWindowVisible(hwnd)) 
+    // 보이지 않는 창 건너뛰기
+    if (!IsWindowVisible(hwnd))
         return TRUE;
 
-    // skip when we already have main window handle
+    // 이미 메인 창 핸들이 있는 경우 건너뛰기
     if (unityHandle == nullptr)
         unityHandle = hwnd;
     else
     {
-        // FindWindow searches all unity window classess of all instanced of unity.
-        // So, use sub window enumeration in current thread instead FindWindow
-        WCHAR lp_class_name[MAX_CLASS_NAME_LENGTH];
-        GetClassName(hwnd, lp_class_name, MAX_CLASS_NAME_LENGTH);
-        if (wcscmp(lp_class_name, UNITY_WINDOW_CLASS_NAME) == 0)
+        // 창의 이름을 가져와서 className에 저장합니다.
+        WCHAR className[MAX_CLASS_NAME_LENGTH];
+        GetClassName(hwnd, className, MAX_CLASS_NAME_LENGTH);
+
+        // className이 UnityWndClass인 경우 unityHandle에 hwnd를 저장합니다.
+        if (IsUnityWindowClass(className))
             unityHandle = hwnd;
     }
 
@@ -64,24 +78,24 @@ LRESULT HookCallback(int code, WPARAM wordParam, LPARAM longParam)
             // 각 파일의 경로를 가져와서 result 배열에 저장합니다. 각 파일 경로를 저장하기 위해 메모리를 동적으로 할당합니다.
             for (int i = 0; i < fileCount; i++)
             {
-                const auto fileName = new WCHAR[MAX_PATH_LENGTH];
-                // // 파일 경로의 길이를 가져옵니다.
-                // int fileLength = DragQueryFile(dropDownInfo, i, nullptr, 0) + 1;
-                //
+                // 파일 경로의 길이를 가져옵니다.
+                int fileLength = DragQueryFile(dropDownInfo, i, nullptr, 0) + 1;
+
                 // // fileLength 크기의 TCHAR 배열을 동적으로 할당합니다.
                 // // 메모리 할당 후 0으로 초기화합니다.
-                // TCHAR* fileName = new TCHAR[fileLength];
-                // memset(fileName, 0, sizeof(TCHAR) * fileLength);
+                TCHAR* fileName = new TCHAR[fileLength];
+                memset(fileName, 0, sizeof(TCHAR) * fileLength);
 
                 // hDrop : 드롭다운 핸들
                 // iFile : 0xFFFFFFFF를 전달하면 드롭된 파일의 총 개수를 반환
                 // lpszFile : 파일 경로를 저장할 버퍼
                 // cch : 버퍼의 길이
-                //DragQueryFile(dropDownInfo, i, fileName, fileLength);
-                DragQueryFile(dropDownInfo, i, fileName, MAX_PATH_LENGTH);
+                DragQueryFile(dropDownInfo, i, fileName, fileLength);
 
+                // 파일 경로를 result 배열에 저장합니다.
                 result[i] = fileName;
 
+                // 동적 할당한 메모리를 해제합니다.
                 delete[] fileName;
             }
 
@@ -104,20 +118,21 @@ LRESULT HookCallback(int code, WPARAM wordParam, LPARAM longParam)
     return CallNextHookEx(hook, code, wordParam, longParam);
 }
 
-extern "C" __declspec(dllexport) void AddHook(Callback callback)
+extern "C" __declspec(dllexport) void AddHook(Callback callback, UnityMode mode)
 {
     UnityCallback = callback;
+    WorkMode = mode;
 
     // 현재 모듈의 핸들을 가져옵니다.
-    HMODULE h_module = GetModuleHandle(nullptr);
+    HMODULE handleModule = GetModuleHandle(nullptr);
 
     // 현재 스레드의 ID를 가져옵니다.
-    DWORD tid = GetCurrentThreadId();
-    
-    if (tid > 0)
-        EnumThreadWindows(tid, FindUnityHWND, 0);
-    
-    hook = SetWindowsHookEx(WH_GETMESSAGE, HookCallback, h_module, tid);
+    DWORD threadID = GetCurrentThreadId();
+
+    if (threadID > 0)
+        EnumThreadWindows(threadID, FindUnityHWND, 0);
+
+    hook = SetWindowsHookEx(WH_GETMESSAGE, HookCallback, handleModule, threadID);
     DragAcceptFiles(unityHandle, true);
 }
 
