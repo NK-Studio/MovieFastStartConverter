@@ -4,6 +4,7 @@ using System.IO;
 using SFB;
 using NKStudio;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
@@ -31,6 +32,8 @@ public class UIController : MonoBehaviour
         if (TryGetComponent(out UIDocument uiDocument))
         {
             _convertButton = uiDocument.rootVisualElement.Q<Button>("ConvertButton");
+            _convertButton.SetEnabled(false);
+            
             _listView = uiDocument.rootVisualElement.Q<ListView>("FileListView");
             _clearButton = uiDocument.rootVisualElement.Q<Button>("ClearButton");
             _listView.makeNoneElement = () =>
@@ -78,6 +81,11 @@ public class UIController : MonoBehaviour
             data.IsFinishConvert = IsVideoFastStartEnabled(link);
             _files.Add(data);
         }
+
+        if (_files.Count > 0)
+        {
+            _convertButton.SetEnabled(true);
+        }
     }
 
     private void Convert()
@@ -104,7 +112,7 @@ public class UIController : MonoBehaviour
         }
 
         _listView.SetEnabled(true);
-        _convertButton.SetEnabled(true);
+        _convertButton.SetEnabled(false);
         _files.Clear();
         NativeDialog.ShowDialogBox("Fast Start Converter", "적용 완료", "확인");
         _audioSource.Play();
