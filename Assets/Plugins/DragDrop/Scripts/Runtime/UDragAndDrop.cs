@@ -14,11 +14,16 @@ namespace NKStudio
 {
     public static class UDragAndDrop
     {
+        private enum UnityMode
+        {
+            Editor,
+            Runtime
+        };
 
         private delegate void DragEndCallback(int length, IntPtr arrayPointer);
 
         [DllImport("UDragAndDrop.dll")]
-        private static extern void AddHook(DragEndCallback callback);
+        private static extern void AddHook(DragEndCallback callback, UnityMode mode);
 
         [DllImport("UDragAndDrop.dll")]
         private static extern void RemoveHook();
@@ -53,9 +58,9 @@ namespace NKStudio
         {
 #if UNITY_STANDALONE_WIN
 #if UNITY_EDITOR
-            AddHook(OnBegin);
+            AddHook(OnBegin, UnityMode.Editor);
 #else
-            AddHook(OnBegin);
+            AddHook(OnBegin, UnityMode.Runtime);
 #endif
 #elif UNITY_STANDALONE_OSX
             Initialize(cs_callback);
