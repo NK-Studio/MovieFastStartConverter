@@ -1,0 +1,17 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement style="align-items: center; padding-left: 12px; height: 70px; justify-content: flex-start; flex-direction: row;">
+        <engine:VisualElement name="VisualElement" style="width: 45px; height: 43px; justify-content: center;">
+            <engine:VisualElement name="Background" style="width: 32px; height: 32px; background-color: rgb(51, 51, 51); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px; position: absolute;" />
+            <engine:VisualElement name="Icon" style="background-image: url(&quot;project://database/Assets/FastStart-Resouces/Textures/check.png?fileID=21300000&amp;guid=f82eba7a3ecba495f9cfc999865f0abc&amp;type=3#check&quot;); -unity-background-scale-mode: scale-to-fit; width: 40px; height: 32px; background-color: rgba(0, 255, 34, 0); -unity-background-image-tint-color: rgb(0, 255, 68); position: absolute; visibility: visible; top: -7px; left: 2px;">
+                <Bindings>
+                    <engine:DataBinding property="style.visibility" data-source-path="Visibility" data-source-type="FastStartData, Assembly-CSharp" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:Label text="C:Drive" enable-rich-text="false" emoji-fallback-support="false" double-click-selects-word="false" display-tooltip-when-elided="false" triple-click-selects-line="false" style="left: 5px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/TextAsset/Pretendard.asset?fileID=11400000&amp;guid=3778b4791ba08494dbf6421ea35cc871&amp;type=2#Pretendard&quot;); font-size: 20px; -unity-text-align: middle-left;">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="URL" data-source-type="FastStartData, Assembly-CSharp" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Label>
+    </engine:VisualElement>
+</engine:UXML>

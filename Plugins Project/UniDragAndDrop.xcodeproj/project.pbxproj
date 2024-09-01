@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8B66C0E2C80DA0000DE5262 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = B897AE6D2C80CB72004B4EE9 /* ffmpeg */; };
 		B8C25B212C7F9A8100FA12DA /* DragAndDropInit.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C25B1C2C7F9A8100FA12DA /* DragAndDropInit.m */; };
 		B8C25B222C7F9A8100FA12DA /* DragAndDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C25B1D2C7F9A8100FA12DA /* DragAndDropView.m */; };
 /* End PBXBuildFile section */
@@ -14,6 +15,7 @@
 /* Begin PBXFileReference section */
 		694E431324E2B05D00012179 /* UniDragAndDrop.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniDragAndDrop.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		694E431624E2B05D00012179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B897AE6D2C80CB72004B4EE9 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ffmpeg; path = Frameworks/ffmpeg; sourceTree = "<group>"; };
 		B8C25B1C2C7F9A8100FA12DA /* DragAndDropInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropInit.m; sourceTree = "<group>"; };
 		B8C25B1D2C7F9A8100FA12DA /* DragAndDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropView.m; sourceTree = "<group>"; };
 		B8C25B1E2C7F9A8100FA12DA /* DragAndDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDrop.h; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 			children = (
 				694E431524E2B05D00012179 /* UniDragAndDrop */,
 				694E431424E2B05D00012179 /* Products */,
+				B897AE6C2C80CB72004B4EE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +58,14 @@
 				694E431624E2B05D00012179 /* Info.plist */,
 			);
 			path = UniDragAndDrop;
+			sourceTree = "<group>";
+		};
+		B897AE6C2C80CB72004B4EE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B897AE6D2C80CB72004B4EE9 /* ffmpeg */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B66C0E2C80DA0000DE5262 /* ffmpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
