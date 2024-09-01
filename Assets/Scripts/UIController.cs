@@ -28,6 +28,12 @@ public class UIController : MonoBehaviour
         InitUI();
     }
     
+    private void OnDestroy()
+    {
+        UDragAndDrop.OnDragAndDropFilesPath -= OnDragAndDropFilePath;
+        UDragAndDrop.Release();
+    }
+    
     private void InitUI()
     {
         if (TryGetComponent(out UIDocument uiDocument))

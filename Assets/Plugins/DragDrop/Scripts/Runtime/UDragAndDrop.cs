@@ -14,19 +14,17 @@ namespace NKStudio
 {
     public static class UDragAndDrop
     {
-        private static class Imports
-        {
-            [DllImport("FileDragBridge.dll")]
-            public static extern void AddHook(DragEndCallback callback);
-
-            [DllImport("FileDragBridge.dll")]
-            public static extern void RemoveHook();
-        }
 
         private delegate void DragEndCallback(int length, IntPtr arrayPointer);
 
+        [DllImport("UDragAndDrop.dll")]
+        private static extern void AddHook(DragEndCallback callback);
+
+        [DllImport("UDragAndDrop.dll")]
+        private static extern void RemoveHook();
+        
         [AOT.MonoPInvokeCallback(typeof(DragEndCallback))]
-        private static void onBegin(int length, IntPtr arrayPointer)
+        private static void OnBegin(int length, IntPtr arrayPointer)
         {
             var paths = new List<string>(length);
 
@@ -47,41 +45,39 @@ namespace NKStudio
         {
             OnDragAndDropFilesPath = null;
         }
-        
+
         /// <summary>
         /// Initialization functions that must be called
         /// </summary>
         public static void Initialize()
         {
 #if UNITY_STANDALONE_WIN
-#if !UNITY_EDITOR
-            Imports.AddHook(onBegin);
+#if UNITY_EDITOR
+            AddHook(OnBegin);
 #else
-            Debug.LogWarning("Editor에서는 동작하지 않습니다.");            
+            AddHook(OnBegin);
 #endif
 #elif UNITY_STANDALONE_OSX
             Initialize(cs_callback);
 #endif
         }
-        
+
         /// <summary>
         /// Unsubscribe to disable drag feature.
         /// </summary>
         public static void Release()
         {
-#if !UNITY_EDITOR_WIN && UNITY_STANDALONE_WIN
-			Imports.RemoveHook();
-#elif UNITY_EDITOR_WIN
-            Debug.Log("FileBridge doesn't work on Editor Platform");
+#if UNITY_STANDALONE_WIN
+			RemoveHook();
 #endif
         }
-        
+
         /// <summary>
         /// Callback to return the local path of a drag-and-drop file
         /// </summary>
         public static Action<List<string>> OnDragAndDropFilesPath;
-        
-       private delegate void callback_delegate(string val);
+
+        private delegate void callback_delegate(string val);
 
 #if UNITY_STANDALONE_OSX
         [DllImport("UniDragAndDrop")]
@@ -113,7 +109,7 @@ namespace NKStudio
 
             // file에 확장자 제거
             var outputFile = file.Replace(".mp4", "-faststart.mp4");
-            
+
             // fast start 적용 명령
             string command = $"-i \"{file}\" -c copy -movflags +faststart \"{outputFile}\"";
 
@@ -128,11 +124,11 @@ namespace NKStudio
 
                     process.Start();
                     process.WaitForExit();
-                    
+
                     return true;
                 }
             });
-            
+
             return false;
         }
     }
