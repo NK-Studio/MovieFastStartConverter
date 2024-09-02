@@ -8,7 +8,7 @@
 .selectFileLabel {
     -unity-text-align: middle-center;
     font-size: 20px;
-    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset?fileID=11400000&guid=3778b4791ba08494dbf6421ea35cc871&type=2#Pretendard");
     color: rgb(31, 187, 255);
     -unity-font-style: bold;
     background-color: transparent;
@@ -16,7 +16,6 @@
 }
 
 .selectFileLabel:hover {
-    cursor: url("project://database/Assets/FastStart-Resouces/Textures/pointinghand.png");
     color: rgb(0, 152, 219);
 }
 
@@ -25,17 +24,14 @@
 }
 
 .button {
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
-    border-bottom-left-radius: 35px;
+    border-radius: 35px;
     background-color: rgb(0, 178, 255);
     border-top-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
     border-left-width: 0;
     font-size: 27px;
-    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset?fileID=11400000&guid=3778b4791ba08494dbf6421ea35cc871&type=2#Pretendard");
     -unity-font-style: bold;
     transition-property: background-color;
     transition-duration: 0.15s;
@@ -43,7 +39,6 @@
 }
 
 .button:hover {
-    cursor: url("project://database/Assets/FastStart-Resouces/Textures/pointinghand.png");
     background-color: rgb(0, 145, 207);
 }
 
@@ -51,7 +46,7 @@
 }
 
 .ListView .unity-list-view__empty-label {
-    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset");
+    -unity-font-definition: url("project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset?fileID=11400000&guid=3778b4791ba08494dbf6421ea35cc871&type=2#Pretendard");
     -unity-text-align: middle-center;
     font-size: 80px;
     color: rgb(102, 102, 102);
@@ -81,10 +76,7 @@
 }
 
 .ListView #unity-slider {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
+    margin: 0;
     min-width: 24px;
     width: 24px;
 }
@@ -99,8 +91,5 @@
     width: 100%;
     left: 0;
     border-width: 0;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;
+    border-radius: 6px;
 }

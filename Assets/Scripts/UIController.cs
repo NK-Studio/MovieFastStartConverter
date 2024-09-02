@@ -5,8 +5,8 @@ using System.Linq;
 using SFB;
 using NKStudio;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class UIController : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour
         UDragAndDrop.OnDragAndDropFilesPath -= OnDragAndDropFilePath;
         UDragAndDrop.Release();
     }
-    
+
     private void InitUI()
     {
         if (TryGetComponent(out UIDocument uiDocument))
@@ -64,12 +64,21 @@ public class UIController : MonoBehaviour
                     var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", "mp4", true);
                     OnDragAndDropFilePath(paths.ToList());
                 };
+                selectButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
+                selectButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
+                
 
                 return emptyGroup;
             };
             _listView.itemsSource = _files;
+            
             _convertButton.clicked += Convert;
+            _convertButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
+            _convertButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
+            
             _clearButton.clicked += () => _files.Clear();
+            _clearButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
+            _clearButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
         }
     }
 
