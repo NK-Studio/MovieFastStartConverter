@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{18F8BE39-7B66-4D83-9E29-66F53C544009}</ProjectGuid>
+    <ProjectGuid>{4E6A1987-EB3A-4409-8C35-608D9A817674}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DialogBox_Windows</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
