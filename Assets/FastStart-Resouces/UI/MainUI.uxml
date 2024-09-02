@@ -1,12 +1,12 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/FastStart-Resouces/UI/UI-Style.uss?fileID=7433441132597879392&amp;guid=2b8136fe78a304318b95cb66e32adb21&amp;type=3#UI-Style" />
+    <Style src="project://database/Assets/FastStart-Resouces/UI/MainStyle.uss?fileID=7433441132597879392&amp;guid=2b8136fe78a304318b95cb66e32adb21&amp;type=3#MainStyle" />
     <engine:VisualElement name="Background" style="flex-grow: 1; background-color: rgb(50, 51, 56); position: absolute; top: 0; left: 0; right: 0; bottom: 0;" />
-    <engine:VisualElement style="flex-grow: 1; flex-basis: 420px; align-items: center;">
-        <engine:Label text="타겟 리스트 (*.mp4)" name="Label" style="position: absolute; left: 40px; top: 45px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/TextAsset/Pretendard.asset?fileID=11400000&amp;guid=3778b4791ba08494dbf6421ea35cc871&amp;type=2#Pretendard&quot;); font-size: 40px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
-        <engine:ListView item-template="project://database/Assets/FastStart-Resouces/UI/ItemTemplate.uxml?fileID=9197481963319205126&amp;guid=f34efe303e6e04de6831ed140a87c2c2&amp;type=3#ItemTemplate" binding-source-selection-mode="AutoAssign" virtualization-method="FixedHeight" name="FileListView" fixed-item-height="70" class="ListView" style="width: 1200px; height: 400px; top: 150px; background-color: rgb(55, 58, 64);" />
-        <engine:Button text="비우기" name="ClearButton" class="selectFileLabel" style="position: absolute; top: 119px; left: auto; right: 40px; -unity-text-align: middle-right; height: 22px; width: 65px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; padding-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;" />
-    </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; justify-content: center;">
-        <engine:Button text="변환" name="ConvertButton" enabled="true" class="button" style="height: 70px; width: 180px; position: absolute; right: 30px;" />
+    <engine:VisualElement name="Vertical-Layout" style="flex-grow: 1; flex-basis: 420px; align-items: center;">
+        <engine:VisualElement name="Relative-Layout" style="flex-grow: 1; position: absolute; height: 70%; width: 90%; left: auto; right: auto; top: 12%; bottom: 0;">
+            <engine:Label text="타겟 리스트 (*.mp4)" name="Label" style="position: absolute; left: 0; top: -75px; -unity-font-definition: url(&quot;project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset?fileID=11400000&amp;guid=3778b4791ba08494dbf6421ea35cc871&amp;type=2#Pretendard&quot;); font-size: 40px; color: rgb(255, 255, 255); -unity-font-style: bold; bottom: auto;" />
+            <engine:Button text="비우기" name="ClearButton" class="selectFileLabel" style="position: absolute; top: -40px; left: auto; right: 0; -unity-text-align: middle-right; height: 22px; width: 65px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; padding-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; bottom: auto;" />
+            <engine:ListView item-template="project://database/Assets/FastStart-Resouces/UI/ItemTemplate.uxml?fileID=9197481963319205126&amp;guid=f34efe303e6e04de6831ed140a87c2c2&amp;type=3#ItemTemplate" binding-source-selection-mode="AutoAssign" virtualization-method="FixedHeight" name="FileListView" fixed-item-height="70" class="ListView" style="width: 100%; height: 100%; top: auto; background-color: rgb(55, 58, 64); position: absolute; flex-grow: 1;" />
+            <engine:Button text="변환" name="ConvertButton" enabled="true" class="button" style="height: 70px; width: 180px; position: absolute; right: 0; top: auto; bottom: -100px;" />
+        </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

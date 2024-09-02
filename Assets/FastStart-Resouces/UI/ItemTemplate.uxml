@@ -8,7 +8,7 @@
                 </Bindings>
             </engine:VisualElement>
         </engine:VisualElement>
-        <engine:Label text="C:Drive" enable-rich-text="false" emoji-fallback-support="false" double-click-selects-word="false" display-tooltip-when-elided="false" triple-click-selects-line="false" style="left: 5px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/TextAsset/Pretendard.asset?fileID=11400000&amp;guid=3778b4791ba08494dbf6421ea35cc871&amp;type=2#Pretendard&quot;); font-size: 20px; -unity-text-align: middle-left;">
+        <engine:Label text="C:Drive" enable-rich-text="false" emoji-fallback-support="false" double-click-selects-word="false" display-tooltip-when-elided="false" triple-click-selects-line="false" style="left: 5px; color: rgb(255, 255, 255); -unity-font-definition: url(project://database/Assets/FastStart-Resouces/Fonts/TextAsset/Pretendard.asset); font-size: 20px; -unity-text-align: middle-left;">
             <Bindings>
                 <engine:DataBinding property="text" data-source-path="URL" data-source-type="FastStartData, Assembly-CSharp" binding-mode="ToTarget" />
             </Bindings>
