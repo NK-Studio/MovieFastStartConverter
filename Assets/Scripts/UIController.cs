@@ -64,21 +64,22 @@ public class UIController : MonoBehaviour
                     var paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", "mp4", true);
                     OnDragAndDropFilePath(paths.ToList());
                 };
-                selectButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
-                selectButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
+                
+                selectButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
+                selectButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.Standard));
                 
 
                 return emptyGroup;
             };
             _listView.itemsSource = _files;
-            
+
             _convertButton.clicked += Convert;
-            _convertButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
-            _convertButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
+            _convertButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
+            _convertButton.RegisterCallback<MouseLeaveEvent>(_ =>NativeCursor.SetCursor(CursorType.Standard));
             
             _clearButton.clicked += () => _files.Clear();
-            _clearButton.RegisterCallback<MouseEnterEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.Hand));
-            _clearButton.RegisterCallback<MouseLeaveEvent>(_ => NativeMouse.ApplyCursor(NativeMouse.CursorType.StandardArrow));
+            _clearButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
+            _clearButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.Standard));
         }
     }
 
