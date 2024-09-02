@@ -15,7 +15,7 @@ namespace NKStudio
         /// MacOS에서 동작하는 커서를 설정합니다.
         /// </summary>
         /// <param name="cursorType">변경할 커서 타입</param>
-        public static void SetMacCursor(MacCursorType cursorType)
+        public static void SetMacCursor(MacOSCursorType cursorType)
         {
             OSXCore.SetCursor(cursorType);
         }

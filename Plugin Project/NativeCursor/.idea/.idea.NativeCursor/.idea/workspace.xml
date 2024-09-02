@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="896600cc-3374-4ff6-8432-4e822ab5e8f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/Windows.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/Windows/NativeCursor.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/Windows/NativeCursor.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/WindowsCore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/MacOS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/Windows.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/.idea/.idea.NativeCursor-Windows/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/.idea/.idea.NativeCursor-Windows/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/.idea/.idea.NativeCursor-Windows/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/.idea/.idea.NativeCursor-Windows/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/NativeCursor-Windows.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/NativeCursor-Windows.vcxproj.filters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/dllmain.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/dllmain.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/Cl.items.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/NativeCursor-Windows.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCu.9082AACB.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCursor-Windows.dll.recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCursor-Windows.iobj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/NativeCursor-Windows.ipdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/NativeCursor-Windows/x64/Release/dllmain.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/x64/Release/NativeCursor-Windows.exp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NativeCursor-Windows/x64/Release/NativeCursor-Windows.lib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.NativeCursor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.bundle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/MacOS/DialogBox.bundle.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/MacOS/DialogBox.bundle/Contents/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.bundle/Contents/MacOS/DialogBox" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/MacOS/DialogBox.bundle/Contents/MacOS/DialogBox" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.bundle/Contents/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/MacOS/NativeMouse.bundle/Contents/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/Windows/DialogBox.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/DialogBox.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/Windows/DialogBox.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins/MacOS.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/MacOS.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins/MacOS/NativeMouse.bundle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/MacOS/NativeMouse.bundle.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins/MacOS/NativeMouse.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/MacOS/NativeMouse.bundle/Contents/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins/MacOS/NativeMouse.bundle/Contents/MacOS/NativeMouse" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Plugins/MacOS/NativeMouse.bundle/Contents/MacOS/NativeMouse" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Plugins/MacOS/NativeMouse.bundle/Contents/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeDialog/Plugins/MacOS/DialogBox.bundle/Contents/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/ECursorType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/ECursorType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/ECursorType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/ECursorType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/NativeCursor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/NativeCursor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/NativeCursor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/NativeCursor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/OSXCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/OSXCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/OSXCore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/OSXCore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/UniversalCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/UniversalCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/UniversalCore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/UniversalCore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/WindowsCore.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Plugins/NativeMouse/Scripts/Runtime/WindowsCore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Plugins/NativeCursor/Scripts/Runtime/WindowsCore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assets/Scripts/TestCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assets/Scripts/TestCode.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NK-Studio&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NK-Studio/MovieFastStartConverter.git&quot;,
+    &quot;accountId&quot;: &quot;74da2899-399b-4ac2-98bf-94e2b72c08f4&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2lWDRwsjpOVYKHYtbIEHTo2f5iu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="896600cc-3374-4ff6-8432-4e822ab5e8f3" name="Changes" comment="" />
+      <created>1725286935063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725286935063</updated>
+      <workItem from="1725286936355" duration="895000" />
+      <workItem from="1725287884540" duration="4248000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

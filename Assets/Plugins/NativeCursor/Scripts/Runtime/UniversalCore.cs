@@ -9,8 +9,8 @@ namespace NKStudio
         internal static void SetCursor(CursorType cursorType)
         {
 #if UNITY_STANDALONE_WIN
-        var universalCursorType = (WindowsCore.WindowsCursorType)cursorType;
-        WindowsCore.ApplyCursor(universalCursorType);
+            var universalCursorType = (WindowsCursorType)cursorType;
+            WindowsCore.SetCursor(universalCursorType);
 #elif UNITY_STANDALONE_OSX
             var universalCursorType = (MacCursorType)cursorType;
             OSXCore.SetCursor(universalCursorType);

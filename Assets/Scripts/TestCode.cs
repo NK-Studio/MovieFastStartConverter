@@ -10,7 +10,7 @@
         {
             if (Keyboard.current.aKey.wasPressedThisFrame)
             {
-                NativeCursor.SetCursor(CursorType.Hand);
+                NativeCursor.SetWindowsCursor(WindowsCursorType.NORMAL);
             }
         }
     }
