@@ -3,16 +3,16 @@ namespace NKStudio
     public static class UniversalCore
     {
         /// <summary>
-        /// 커서를 적용합니다.
+        /// Sets the cursor.
         /// </summary>
-        /// <param name="cursorType">적용할 커서의 타입입니다.</param>
+        /// <param name="cursorType">The type of cursor to set.</param>
         internal static void SetCursor(CursorType cursorType)
         {
 #if UNITY_STANDALONE_WIN
             var universalCursorType = (WindowsCursorType)cursorType;
             WindowsCore.SetCursor(universalCursorType);
 #elif UNITY_STANDALONE_OSX
-            var universalCursorType = (MacCursorType)cursorType;
+            var universalCursorType = (MacOSCursorType)cursorType;
             OSXCore.SetCursor(universalCursorType);
 #endif
         }

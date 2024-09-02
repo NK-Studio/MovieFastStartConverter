@@ -1,18 +1,20 @@
+#if UNITY_STANDALONE_OSX
 using System.Runtime.InteropServices;
+#endif
 
 namespace NKStudio
 {
     public static class OSXCore
     {
 #if UNITY_STANDALONE_OSX
-        [DllImport("NativeMouse")]
+        [DllImport("NativeCursor")]
         private static extern void _SetCursor(MacOSCursorType cursorType);
 #endif
 
         /// <summary>
-        /// 커서를 적용합니다.
+        /// Sets the cursor.
         /// </summary>
-        /// <param name="cursorType">적용할 커서의 타입입니다.</param>
+        /// <param name="cursorType">The type of cursor to set.</param>
         internal static void SetCursor(MacOSCursorType cursorType)
         {
 #if UNITY_STANDALONE_OSX

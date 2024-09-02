@@ -3,27 +3,27 @@ namespace NKStudio
     public static class NativeCursor
     {
         /// <summary>
-        /// 윈도우와 맥에서 동작하는 커서를 설정합니다.
+        /// Sets the cursor for both Windows and Mac.
         /// </summary>
-        /// <param name="cursorType">변경할 커서 타입</param>
+        /// <param name="cursorType">The type of cursor to change to.</param>
         public static void SetCursor(CursorType cursorType)
         {
             UniversalCore.SetCursor(cursorType);
         }
 
         /// <summary>
-        /// MacOS에서 동작하는 커서를 설정합니다.
+        /// Sets the cursor for MacOS.
         /// </summary>
-        /// <param name="cursorType">변경할 커서 타입</param>
+        /// <param name="cursorType">The type of cursor to change to.</param>
         public static void SetMacCursor(MacOSCursorType cursorType)
         {
             OSXCore.SetCursor(cursorType);
         }
 
         /// <summary>
-        /// Windows에서 동작하는 커서를 설정합니다.
+        /// Sets the cursor for Windows.
         /// </summary>
-        /// <param name="cursorType">변경할 커서 타입</param>
+        /// <param name="cursorType">The type of cursor to change to.</param>
         public static void SetWindowsCursor(WindowsCursorType cursorType)
         {
             WindowsCore.SetCursor(cursorType);

@@ -65,8 +65,8 @@ public class UIController : MonoBehaviour
                     OnDragAndDropFilePath(paths.ToList());
                 };
                 
-                selectButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
-                selectButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.Standard));
+                selectButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.HAND));
+                selectButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.ARROW));
                 
 
                 return emptyGroup;
@@ -74,12 +74,12 @@ public class UIController : MonoBehaviour
             _listView.itemsSource = _files;
 
             _convertButton.clicked += Convert;
-            _convertButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
-            _convertButton.RegisterCallback<MouseLeaveEvent>(_ =>NativeCursor.SetCursor(CursorType.Standard));
+            _convertButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.HAND));
+            _convertButton.RegisterCallback<MouseLeaveEvent>(_ =>NativeCursor.SetCursor(CursorType.ARROW));
             
             _clearButton.clicked += () => _files.Clear();
-            _clearButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.Hand));
-            _clearButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.Standard));
+            _clearButton.RegisterCallback<MouseEnterEvent>(_ => NativeCursor.SetCursor(CursorType.HAND));
+            _clearButton.RegisterCallback<MouseLeaveEvent>(_ => NativeCursor.SetCursor(CursorType.ARROW));
         }
     }
 
