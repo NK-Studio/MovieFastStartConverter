@@ -8,7 +8,7 @@ namespace NKStudio
     {
 #if UNITY_STANDALONE_WIN
         [DllImport("NativeCursor.dll")]
-        private static extern void _SetCursor(WindowsCursorType cursorType);
+        private static extern void set_cursor(WindowsCursorType cursorType);
 #endif
         
         /// <summary>
@@ -17,7 +17,7 @@ namespace NKStudio
         internal static void SetCursor(WindowsCursorType cursorType)
         {
 #if UNITY_STANDALONE_WIN
-            _SetCursor(cursorType);
+            set_cursor(cursorType);
 #endif
         }
     }
