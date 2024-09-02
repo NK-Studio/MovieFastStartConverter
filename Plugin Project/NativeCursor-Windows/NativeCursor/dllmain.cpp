@@ -1,6 +1,7 @@
 #include <windows.h>
 
-enum class WindowsCursorType {
+enum class WindowsCursorType
+{
     ARROW,
     IBEAM,
     CROSS,
@@ -13,72 +14,45 @@ enum class WindowsCursorType {
     SIZEALL,
     APPSTARTING,
     HELP,
-    UPARROW,        // Unused in Windows API
-    UP,             // Unused in Windows API
-    PERSON,         // Unused in Windows API
-    PIN,            // Unused in Windows API
-    WAIT            // Unused in Windows API
+    UPARROW, // Unused in Windows API
+    UP, // Unused in Windows API
+    PERSON, // Unused in Windows API
+    PIN, // Unused in Windows API
+    WAIT // Unused in Windows API
 };
 
-// Define OCR_NORMAL if it is not already defined
-#ifndef OCR_NORMAL
-#define OCR_NORMAL 32512  // Normal arrow
-#endif
-
 // Function to set the system cursor
-extern "C"{
-     __declspec(dllexport) void set_cursor(WindowsCursorType cursorType)
-     {
-         LPCTSTR cursor_type = IDC_ARROW; // Default cursor
-
-         switch (cursorType)
-         {
-         case WindowsCursorType::ARROW:
-             cursor_type = IDC_ARROW;
-             break;
-         case WindowsCursorType::IBEAM:
-             cursor_type = IDC_IBEAM;
-             break;
-         case WindowsCursorType::CROSS:
-             cursor_type = IDC_CROSS;
-             break;
-         case WindowsCursorType::HAND:
-             cursor_type = IDC_HAND;
-             break;
-         case WindowsCursorType::NO:
-             cursor_type = IDC_NO;
-             break;
-         case WindowsCursorType::SIZENS:
-             cursor_type = IDC_SIZENS;
-             break;
-         case WindowsCursorType::SIZEWE:
-             cursor_type = IDC_SIZEWE;
-             break;
-         case WindowsCursorType::SIZENWSE:
-             cursor_type = IDC_SIZENWSE;
-             break;
-         case WindowsCursorType::SIZENESW:
-             cursor_type = IDC_SIZENESW;
-             break;
-         case WindowsCursorType::SIZEALL:
-             cursor_type = IDC_SIZEALL;
-             break;
-         case WindowsCursorType::APPSTARTING:
-             cursor_type = IDC_APPSTARTING;
-             break;
-         case WindowsCursorType::HELP:
-             cursor_type = IDC_HELP;
-             break;
-         default:
-             cursor_type = IDC_ARROW;
-             break;
-         }
-
-         // Load the cursor and set it as the system cursor
-         HCURSOR hCursor = LoadCursor(nullptr, cursor_type);
-         if (hCursor)
-         {
-             SetSystemCursor(hCursor, OCR_NORMAL);
-         }
-     }
+extern "C" {
+__declspec(dllexport) LPWSTR convert_cursor_id(const WindowsCursorType cursor_type)
+{
+    switch (cursor_type)
+    {
+    case WindowsCursorType::ARROW:
+        return IDC_ARROW;
+    case WindowsCursorType::IBEAM:
+        return IDC_IBEAM;
+    case WindowsCursorType::CROSS:
+        return IDC_CROSS;
+    case WindowsCursorType::HAND:
+        return IDC_HAND;
+    case WindowsCursorType::NO:
+        return IDC_NO;
+    case WindowsCursorType::SIZENS:
+        return IDC_SIZENS;
+    case WindowsCursorType::SIZEWE:
+        return IDC_SIZEWE;
+    case WindowsCursorType::SIZENWSE:
+        return IDC_SIZENWSE;
+    case WindowsCursorType::SIZENESW:
+        return IDC_SIZENESW;
+    case WindowsCursorType::SIZEALL:
+        return IDC_SIZEALL;
+    case WindowsCursorType::APPSTARTING:
+        return IDC_APPSTARTING;
+    case WindowsCursorType::HELP:
+        return IDC_HELP;
+    default:
+        return IDC_ARROW;
+    }
+}
 }
